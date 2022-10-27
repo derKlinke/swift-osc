@@ -25,4 +25,6 @@ let package = Package(
         .target(name: "ysocket", dependencies: ["ysocketc"]),
         
         .target(name: "ysocketc"),
+        
+            .testTarget(name: "SwiftOSC-Tests", dependencies: ["SwiftOSC"])
     ])
