@@ -10,23 +10,21 @@ import Foundation
 
 extension Int: OSCType {
     public var tag: String {
-        get {
-            return "i"
-        }
+        "i"
     }
+
     public var data: Data {
-        get {
-            var int = Int32(self).bigEndian
-            let buffer = withUnsafeMutablePointer(to: &int){UnsafeBufferPointer(start: $0, count: 1)}
-            let data = Data(buffer: buffer)
-            return data
-        }
+        var int = Int32(self).bigEndian
+        let buffer = withUnsafeMutablePointer(to: &int) { UnsafeBufferPointer(start: $0, count: 1) }
+        let data = Data(buffer: buffer)
+        return data
     }
+
     init(_ data: Data) {
         var int = Int32()
-        let buffer = withUnsafeMutablePointer(to: &int){UnsafeMutableBufferPointer(start: $0, count: 1)}
+        let buffer = withUnsafeMutablePointer(to: &int) { UnsafeMutableBufferPointer(start: $0, count: 1) }
         _ = data.copyBytes(to: buffer)
-        
-        self =  Int(int.byteSwapped)
+
+        self = Int(int.byteSwapped)
     }
 }

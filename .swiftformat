@@ -1,0 +1,76 @@
+--acronyms ID,URL,UUID
+--allman false
+--assetliterals visual-width
+--beforemarks 
+--binarygrouping none
+--categorymark "MARK: %c"
+--classthreshold 0
+--closingparen balanced
+--closurevoid remove
+--commas always
+--conflictmarkers reject
+--decimalgrouping 3,4
+--elseposition same-line
+--emptybraces no-space
+--enumthreshold 0
+--exponentcase lowercase
+--exponentgrouping disabled
+--extensionacl on-declarations
+--extensionlength 0
+--extensionmark "MARK: - %t + %c"
+--fractiongrouping disabled
+--fragment false
+--funcattributes prev-line
+--groupedextension "MARK: %t + %c"
+--guardelse auto
+--header "// -----------------------------------------------------------------------------------------------------------\n// {file} - This file is part of LIPPO\n// -----------------------------------------------------------------------------------------------------------\n// Copyright (c) 2020 - 2022 Fabian S. Klinke. All rights reserved.\n// Unauthorised copying of this file, via any medium is strictly prohibited!\n// -----------------------------------------------------------------------------------------------------------"
+--hexgrouping none
+--hexliteralcase uppercase
+--ifdef indent
+--importgrouping alpha
+--indent 4
+--indentcase false
+--indentstrings false
+--lifecycle 
+--lineaftermarks false
+--linebreaks lf
+--markcategories true
+--markextensions always
+--marktypes always
+--maxwidth 110
+--modifierorder 
+--nevertrailing 
+--nospaceoperators 
+--nowrapoperators 
+--octalgrouping none
+--operatorfunc spaced
+--organizetypes class,enum,struct
+--patternlet hoist
+--ranges spaced
+--redundanttype inferred
+--self remove
+--selfrequired 
+--semicolons never
+--shortoptionals always
+--smarttabs enabled
+--stripunusedargs always
+--structthreshold 0
+--swiftversion 5.7
+--tabwidth unspecified
+--trailingclosures 
+--trimwhitespace always
+--typeattributes prev-line
+--typemark "MARK: - %t"
+--varattributes same-line
+--voidtype void
+--wraparguments after-first
+--wrapcollections before-first
+--wrapconditions after-first
+--wrapparameters after-first
+--wrapreturntype preserve
+--wrapternary default
+--wraptypealiases preserve
+--xcodeindentation disabled
+--yodaswap always
+--disable spaceAroundParens,unusedArguments,wrapMultilineStatementBraces
+--enable blankLinesBetweenImports,blockComments,markTypes,sortedSwitchCases,wrapConditionalBodies,wrapEnumCases,wrapSwitchCases

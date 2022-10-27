@@ -8,22 +8,19 @@
 
 import Foundation
 
+// MARK: - Impulse
 public struct Impulse {
-    public init(){
-        
-    }
+    public init() {}
 }
 
+// MARK: Impulse + OSCType
 extension Impulse: OSCType {
     public var tag: String {
-        get {
-            return "I"
-        }
+        "I"
     }
+
     public var data: Data {
-        get {
-            return Data()
-        }
+        Data()
     }
 }
 

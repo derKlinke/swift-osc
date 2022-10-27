@@ -10,46 +10,44 @@ import Foundation
 
 public typealias Timetag = UInt64
 
+// MARK: Timetag + OSCType
 extension Timetag: OSCType {
-    
     public var tag: String {
-        get {
-            return "t"
-        }
+        "t"
     }
+
     public var data: Data {
-        get {
-            var int = self.bigEndian
-            let buffer = withUnsafeMutablePointer(to: &int){UnsafeBufferPointer(start: $0, count: 1)}
-            return Data(buffer: buffer)
-        }
+        var int = bigEndian
+        let buffer = withUnsafeMutablePointer(to: &int) { UnsafeBufferPointer(start: $0, count: 1) }
+        return Data(buffer: buffer)
     }
+
     public var secondsSince1900: Double {
-        get {
-            return Double(self / 0x1_0000_0000)
-        }
+        Double(self / 0x100000000)
     }
+
     public var secondsSinceNow: Double {
-        get {
-            if self > 0 {
-                return Double((self - Date().oscTimetag) / 0x1_0000_0000)
-            } else {
-                return 0.0
-            }
+        if self > 0 {
+            return Double((self - Date().oscTimetag) / 0x100000000)
+        } else {
+            return 0.0
         }
     }
-    public init(secondsSinceNow seconds: Double){
+
+    public init(secondsSinceNow seconds: Double) {
         self = Date().oscTimetag
-        self += UInt64(seconds * 0x1_0000_0000)
+        self += UInt64(seconds * 0x100000000)
     }
-    public init(secondsSince1900 seconds: Double){
-        self = UInt64(seconds * 0x1_0000_0000)
+
+    public init(secondsSince1900 seconds: Double) {
+        self = UInt64(seconds * 0x100000000)
     }
-    init(_ data: Data){
+
+    init(_ data: Data) {
         var int = UInt64()
-        let buffer = withUnsafeMutablePointer(to: &int){UnsafeMutableBufferPointer(start: $0, count: 1)}
+        let buffer = withUnsafeMutablePointer(to: &int) { UnsafeMutableBufferPointer(start: $0, count: 1) }
         _ = data.copyBytes(to: buffer)
-        
-        self =  int.byteSwapped
+
+        self = int.byteSwapped
     }
 }

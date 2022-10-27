@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /// Protocol for all OSC types that are sent/received. OSCMessage and OSCBundle conform to this protocol
 public protocol OSCElement {
     var data: Data { get }
