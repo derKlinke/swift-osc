@@ -1,16 +1,17 @@
-//
-//  ConnectionTests.swift
-//  
-//
-//  Created by Fabian S. Klinke on 27.10.22.
-//
+// -----------------------------------------------------------------------------------------------------------
+// ConnectionTests.swift - This file is part of swift-osc
+// -----------------------------------------------------------------------------------------------------------
+// Copyright (c) 2020 - 2022 Fabian S. Klinke. All rights reserved.
+// Unauthorised copying of this file, via any medium is strictly prohibited!
+// -----------------------------------------------------------------------------------------------------------
 
-import XCTest
 import SwiftOSC
+import XCTest
 
 let adress = "localhost"
-let port = 9000
+let port = 9_000
 
+// MARK: - ConnectionTests
 final class ConnectionTests: XCTestCase {
     var client = OSCClient(address: adress, port: port)
 

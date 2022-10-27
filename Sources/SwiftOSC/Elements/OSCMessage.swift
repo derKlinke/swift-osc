@@ -1,3 +1,10 @@
+// -----------------------------------------------------------------------------------------------------------
+// OSCMessage.swift - This file is part of swift-osc
+// -----------------------------------------------------------------------------------------------------------
+// Copyright (c) 2020 - 2022 Fabian S. Klinke. All rights reserved.
+// Unauthorised copying of this file, via any medium is strictly prohibited!
+// -----------------------------------------------------------------------------------------------------------
+
 import Foundation
 
 /// Most common OSCElement. Most of the OSC data that is sent/received is this type.
@@ -18,7 +25,7 @@ public class OSCMessage: OSCElement, CustomStringConvertible {
         // create type list
         var types = ","
         for argument in arguments {
-            if let argument = argument {
+            if let argument {
                 types += argument.tag
             } else {
                 // add null tag if nil argument
@@ -29,7 +36,7 @@ public class OSCMessage: OSCElement, CustomStringConvertible {
 
         // get arguments data
         for argument in arguments {
-            if let argument = argument {
+            if let argument {
                 data.append(argument.data)
             }
         }

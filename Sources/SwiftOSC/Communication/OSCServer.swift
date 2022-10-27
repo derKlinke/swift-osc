@@ -1,3 +1,10 @@
+// -----------------------------------------------------------------------------------------------------------
+// OSCServer.swift - This file is part of swift-osc
+// -----------------------------------------------------------------------------------------------------------
+// Copyright (c) 2020 - 2022 Fabian S. Klinke. All rights reserved.
+// Unauthorised copying of this file, via any medium is strictly prohibited!
+// -----------------------------------------------------------------------------------------------------------
+
 import Foundation
 import ysocket
 
@@ -45,7 +52,8 @@ open class OSCServer {
     /// Creates a new OSCServer
     ///
     /// - Parameters:
-    ///   - address: Could be an IP address, or just "localhost" for sending internally in your computer. For most cases, just leave this with a blank String
+    ///   - address: Could be an IP address, or just "localhost" for sending internally in your computer. For
+    /// most cases, just leave this with a blank String
     ///   - port: Must be a vaild port that's not being used.
     ///
     /// ~~~
@@ -73,7 +81,7 @@ open class OSCServer {
         DispatchQueue.global().async {
             while true {
                 let (data, _, _) = self.server.recv(9_216)
-                if let data = data {
+                if let data {
                     if self.running {
                         let data = Data(data)
                         self.decodePacket(data)

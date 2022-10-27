@@ -1,16 +1,16 @@
-//
-//  OSCAddress.swift
-//  SwiftOSC
-//
-//  Created by Devin Roth on 6/26/16.
-//  Copyright © 2016 Devin Roth Music. All rights reserved.
-//
+// -----------------------------------------------------------------------------------------------------------
+// OSCAddress.swift - This file is part of swift-osc
+// -----------------------------------------------------------------------------------------------------------
+// Copyright (c) 2020 - 2022 Fabian S. Klinke. All rights reserved.
+// Unauthorised copying of this file, via any medium is strictly prohibited!
+// -----------------------------------------------------------------------------------------------------------
 
 import Foundation
 
 /// The address of the message.
 ///
-/// *This struct validates the OSC address you pass into it. Invalid characters are: space * , ? [ ] { } OR two or more / in a row AND must start with / AND no empty strings*
+/// *This struct validates the OSC address you pass into it. Invalid characters are: space * , ? [ ] { } OR
+/// two or more / in a row AND must start with / AND no empty strings*
 public struct OSCAddress {
     // MARK: Properties
     public var string: String {
@@ -41,7 +41,8 @@ public struct OSCAddress {
         var isValid = true
 
         autoreleasepool {
-            // invalid characters: space * , ? [ ] { } OR two or more / in a row AND must start with / AND no empty strings
+            // invalid characters: space * , ? [ ] { } OR two or more / in a row AND must start with / AND no
+            // empty strings
             if address
                 .range(of: "[\\s\\*,?\\[\\]\\{\\}]|/{2,}|^[^/]|^$", options: .regularExpression) != nil {
                 // returns false if there are any matches

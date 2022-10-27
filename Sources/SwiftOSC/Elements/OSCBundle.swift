@@ -1,6 +1,14 @@
+// -----------------------------------------------------------------------------------------------------------
+// OSCBundle.swift - This file is part of swift-osc
+// -----------------------------------------------------------------------------------------------------------
+// Copyright (c) 2020 - 2022 Fabian S. Klinke. All rights reserved.
+// Unauthorised copying of this file, via any medium is strictly prohibited!
+// -----------------------------------------------------------------------------------------------------------
+
 import Foundation
 
-/// Used to group two or more OSCElements. In most cases, you can bundle two or more OSCMessages to be sent at the same time.
+/// Used to group two or more OSCElements. In most cases, you can bundle two or more OSCMessages to be sent at
+/// the same time.
 public class OSCBundle: OSCElement, CustomStringConvertible {
     // MARK: Properties
 

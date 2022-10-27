@@ -1,10 +1,9 @@
-//
-//  Timer.swift
-//  SwiftOSC
-//
-//  Created by Devin Roth on 7/10/16.
-//  Copyright © 2016 Devin Roth Music. All rights reserved.
-//
+// -----------------------------------------------------------------------------------------------------------
+// Timer.swift - This file is part of swift-osc
+// -----------------------------------------------------------------------------------------------------------
+// Copyright (c) 2020 - 2022 Fabian S. Klinke. All rights reserved.
+// Unauthorised copying of this file, via any medium is strictly prohibited!
+// -----------------------------------------------------------------------------------------------------------
 
 import Foundation
 

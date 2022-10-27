@@ -23,7 +23,7 @@
 --funcattributes prev-line
 --groupedextension "MARK: %t + %c"
 --guardelse auto
---header "// -----------------------------------------------------------------------------------------------------------\n// {file} - This file is part of LIPPO\n// -----------------------------------------------------------------------------------------------------------\n// Copyright (c) 2020 - 2022 Fabian S. Klinke. All rights reserved.\n// Unauthorised copying of this file, via any medium is strictly prohibited!\n// -----------------------------------------------------------------------------------------------------------"
+--header "// -----------------------------------------------------------------------------------------------------------\n// {file} - This file is part of swift-osc\n// -----------------------------------------------------------------------------------------------------------\n// Copyright (c) 2020 - 2022 Fabian S. Klinke. All rights reserved.\n// Unauthorised copying of this file, via any medium is strictly prohibited!\n// -----------------------------------------------------------------------------------------------------------"
 --hexgrouping none
 --hexliteralcase uppercase
 --ifdef indent
