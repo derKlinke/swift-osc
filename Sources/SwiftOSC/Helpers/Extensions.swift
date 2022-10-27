@@ -11,8 +11,11 @@ import Foundation
 extension Data {
     func toInt32() -> Int32 {
         var int = Int32()
-        let buffer = UnsafeMutableBufferPointer(start: &int, count: 1)
-        _ = self.copyBytes(to: buffer)
+        
+        withUnsafeMutablePointer(to: &int) {
+            let buffer = UnsafeMutableBufferPointer(start: $0, count: 1)
+            _ = self.copyBytes(to: buffer)
+        }
         
         return int.byteSwapped
     }
@@ -57,7 +60,7 @@ extension Date {
 extension Int32 {
     func toData() -> Data {
         var int = self.bigEndian
-        let buffer = UnsafeBufferPointer(start: &int, count: 1)
+        let buffer = withUnsafeMutablePointer(to: &int) {UnsafeBufferPointer(start: $0, count: 1)}
         return Data(buffer: buffer)
     }
 }
@@ -65,7 +68,7 @@ extension Int32 {
 extension UInt32 {
     func toData() -> Data {
         var int = self.bigEndian
-        let buffer = UnsafeBufferPointer(start: &int, count: 1)
+        let buffer = withUnsafeMutablePointer(to: &int) {UnsafeBufferPointer(start: $0, count: 1)}
         return Data(buffer: buffer)
     }
 }
@@ -73,7 +76,7 @@ extension UInt32 {
 extension Int64 {
     func toData() -> Data {
         var int = self.bigEndian
-        let buffer = UnsafeBufferPointer(start: &int, count: 1)
+        let buffer = withUnsafeMutablePointer(to: &int) {UnsafeBufferPointer(start: $0, count: 1)}
         return Data(buffer: buffer)
     }
 }
