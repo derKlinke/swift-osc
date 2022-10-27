@@ -1,11 +1,11 @@
 import Foundation
-
+import ysocket
 
 
 
 
 /// Delegate for OSCServer. In most cases, you only need to implement didReceive(message).
-public protocol OSCServerDelegate: class {
+public protocol OSCServerDelegate: AnyObject {
     func didReceive(_ data: Data)
     func didReceive(_ bundle: OSCBundle)
     func didReceive(_ message: OSCMessage)
