@@ -17,7 +17,7 @@ let package = Package(
             targets: ["SwiftOSC"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/MarcoEidinger/SwiftFormatPlugin", from: "0.50.3"),
+        
     ],
     targets: [
         .target(name: "SwiftOSC", dependencies: ["ysocket"]),
