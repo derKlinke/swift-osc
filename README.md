@@ -1,28 +1,19 @@
 # swift-osc
 
-SwiftOSC is a Swift Open Sound Control (OSC) 1.1 client and server framework.
+SwiftOSC is a Swift Open Sound Control (OSC) 1.1 client and server library which has been developed initially by [Existential Audio](https://github.com/ExistentialAudio/SwiftOSC) and then adapted to be used with Swift Package Manager, as well as some minor API changes.
 
 
 ## Quick Start
 ### OSC Server
-#### Step 1
-Import SwiftOSC framework into your project
-```swift
-import SwiftOSC
-```
-#### Step 2
-Create Server
+
+Create Server and start it
 ```swift
 var server = OSCServer(address: "", port: 8080)
 ```
-#### Step 3
-Start server
-```
-server.start()
-```
 
-#### Step 4
+### OSCServerDelegate
 Setup server delegate to handle incoming OSC Data
+
 ```swift
 class OSCHandler: OSCServerDelegate {
     
@@ -36,19 +27,17 @@ class OSCHandler: OSCServerDelegate {
 }
 server.delegate =  OSCHandler()
 ```
+
 ### OSC Client
-#### Step 1
-Import SwiftOSC framework into your project
-```swift
-import SwiftOSC
-```
-#### Step 2
-Create client
+
+Create a client with an adress and port it will send the messages to.
+
 ```swift
 var client = OSCClient(address: "localhost", port: 8080)
 ```
-#### Step 3
-Create a message
+
+and create a message we want to send and send it.
+
 ```swift
 var message = OSCMessage(
     OSCAddressPattern("/"), 
@@ -62,19 +51,6 @@ var message = OSCMessage(
     impulse, 
     Timetag(1)
 )
-```
-Create a bundle
-```swift
-var bundle = OSCBundle(Timetag(secondsSinceNow: 5.0), message)
-```
 
-#### Step 4
-Send message
-```swift
 client.send(message)
-```
-Send bundle
-```swift
-// If the server fully supports timetags, like SwiftOSC, the bundle will be delivered at the correct time.
-client.send(bundle)
 ```
